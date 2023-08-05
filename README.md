@@ -1,3 +1,3 @@
 # Weather
 
-Weather app created using react.
+Weather app implemented using React framework and packed with Vite.

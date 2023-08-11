@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from './components/NavBar'
 
 export default function App() {
     return (
         <div>
-            <h1>Weather App</h1>
+            <Navbar />
         </div>
     )
 }

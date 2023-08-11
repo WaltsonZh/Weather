@@ -4,6 +4,7 @@
     height: 60px;
     display: flex;
     padding: 16px;
+    position: sticky;
 }
 
 .Navbar > img {

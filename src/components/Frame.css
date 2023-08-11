@@ -1,0 +1,9 @@
+.Frame {
+    width: 487px;
+    height: 845px;
+    text-align: center;
+    background: #007DC3;
+    margin: 31px auto;
+    border-radius: 20px;
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+}

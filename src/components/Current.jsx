@@ -4,7 +4,7 @@ import sunny from '/images/sunny.svg'
 
 export default function Current() {
     return (
-        <React.Fragment>
+        <div className='Current'>
             <div className='current-location'>
                 <img className='location-icon' src={location} />
                 <p className='location'>Location</p>
@@ -15,6 +15,6 @@ export default function Current() {
                 <p className='current-HL'>22&deg; / 14&deg;</p>
             </div>
             <img className='current-img' src={sunny} />
-        </React.Fragment>
+        </div>
     )
 }

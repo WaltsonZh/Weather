@@ -2,12 +2,14 @@ import React from 'react'
 import './Frame.css'
 import Searchbar from './Searchbar'
 import Current from './Current'
+import HourForcast from './HourForcast'
 
 export default function Frame() {
     return (
-        <section className='Frame'>
+        <main className='Frame'>
             <Searchbar />
             <Current />
-        </section>
+            <HourForcast />
+        </main>
     )
 }

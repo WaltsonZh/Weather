@@ -9,6 +9,7 @@
     border-radius: 20px;
     box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
     position: relative;
+    overflow: hidden;
 }
 
 .searchBox {
@@ -48,12 +49,18 @@
     }
 }
 
+.Current {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .current-location {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 29px auto;
     gap: 6px;
+    grid-column: 1 / -1;
 }
 
 .location-icon {
@@ -66,14 +73,13 @@
 }
 
 .current-weather {
-    position: absolute;
-    left: 5%;
     color: white;
     text-align: left;
+    margin: auto;
 }
 
 .current-tmp {
-    font-size: 96px;
+    font-size: 72px;
     line-height: 0.9;
 }
 
@@ -83,10 +89,9 @@
 }
 
 .current-HL {
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .current-img {
-    position: absolute;
-    margin: 5%;
+    margin: auto;
 }

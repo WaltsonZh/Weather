@@ -6,6 +6,8 @@
 }
 
 body {
-    height: 100vh;
     background: linear-gradient(315deg, #001931, #00639A);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }

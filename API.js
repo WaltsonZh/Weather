@@ -12,18 +12,21 @@ app.use(cors())
 app.get('/', (req, res) => {
     res.json('WELCOME!!')
 })
+// tomorrow.io
+app.get('/hourforecast', (req, res) => {
+    const lat = req.query.lat
+    const lon = req.query.lon
+    const timezone = req.query.timezone
 
-app.get('/hourForecast', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://tomorrow-io1.p.rapidapi.com/v4/weather/forecast',
         params: {
-            location: '24.99 121.29',
-            timesteps: '1d',
+            location: `${lat} ${lon}`,
+            timesteps: '1h',
             startTime: 'now',
-            endTime: 'nowPlus5d',
-            timezone: 'Asia/Taipei',
-            fields: ['temperature', 'precipitationProbability', 'weatherCodeDay', 'weatherCodeNight'],
+            endTime: 'nowPlus6h',
+            timezone: timezone,
         },
         headers: {
             'X-RapidAPI-Key': process.env.API_KEY,
@@ -34,7 +37,7 @@ app.get('/hourForecast', (req, res) => {
     axios
         .request(options)
         .then((response) => res.json(response.data))
-        .catch((err) => console.error(err))
+        .catch((err) => console.log(err))
 })
 
 app.listen(PORT, () => {

@@ -8,7 +8,6 @@ export async function handler(event, context) {
         method: 'GET',
         url: `https://foreca-weather.p.rapidapi.com/forecast/hourly/${location}`,
         params: {
-            tempunit: 'C',
             tz: timezone,
             periods: '12',
             dataset: 'standard',

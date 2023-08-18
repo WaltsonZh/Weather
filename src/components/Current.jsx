@@ -10,9 +10,8 @@ export default function Current() {
                 <p className='location'>Location</p>
             </div>
             <div className='current-weather'>
-                <p className='current-tmp'>18&deg;C</p>
+                <p className='current-temp'>18&deg;C</p>
                 <p className='current-env'>Sunny</p>
-                <p className='current-HL'>22&deg; / 14&deg;</p>
             </div>
             <img className='current-img' src={sunny} />
         </div>

@@ -11,7 +11,7 @@ export default function Current() {
             </div>
             <div className='current-weather'>
                 <p className='current-temp'>18&deg;C</p>
-                <p className='current-env'>Sunny</p>
+                <p className='current-env'>Clear</p>
             </div>
             <img className='current-img' src={sunny} />
         </div>

@@ -35,9 +35,16 @@ export default function HourForecast() {
         setHourData(hourForecast)
     }, [])
 
+    const hourDataArr = hourData.map((data) => {
+        return <Hour time={data.time} weather={data.symbol} temp={data.temperature} precipProb={data.precipProb} />
+    })
+
+    console.log(hourDataArr)
+
     return (
         <div className='HourForecast'>
             <Hour time={hourData[0].time} weather={hourData[0].symbol} temp={hourData[0].temperature} precipProb={hourData[0].precipProb} />
+            {hourDataArr}
         </div>
     )
 }

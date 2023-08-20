@@ -1,10 +1,6 @@
 import React from 'react'
 
 export default function Hour({ time, weather, temp, precipProb }) {
-    // const hourData = Object.keys(props).map(key =>(
-    //     <p key={key}>{props[key]}</p>
-    // ))
-
     let precip = ''
     if (precipProb > 60) {
         precip = 'bigRain'
@@ -17,10 +13,10 @@ export default function Hour({ time, weather, temp, precipProb }) {
     return (
         <div className='Hour'>
             <p className='time'>{time.slice(11, 16)}</p>
-            <img className='weather' src={`/public/images/weather/${weather}.png`} />
+            <img className='weather' src={`/images/weather/${weather}.png`} draggable={false} />
             <p className='temp'>{temp}&deg;</p>
             <div className='precip'>
-                <img src={`/public/images/${precip}.svg`} />
+                <img src={`/images/${precip}.svg`} />
                 <p>{precipProb}%</p>
             </div>
         </div>

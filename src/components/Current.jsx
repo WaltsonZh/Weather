@@ -1,6 +1,6 @@
 import React from 'react'
 import location from '/images/location.svg'
-import sunny from '/images/sunny.svg'
+import clear from '/images/weather/d000.png'
 
 export default function Current() {
     return (
@@ -13,7 +13,7 @@ export default function Current() {
                 <p className='current-temp'>18&deg;C</p>
                 <p className='current-env'>Clear</p>
             </div>
-            <img className='current-img' src={sunny} />
+            <img className='current-img' src={clear} />
         </div>
     )
 }

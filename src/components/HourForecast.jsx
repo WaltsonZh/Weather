@@ -7,12 +7,13 @@ import hourForecast from '/src/Hourforecast.json'
 export default function HourForecast() {
     const [hourData, setHourData] = useState([
         {
-            time: 'time',
-            symbol: 'symbol',
-            temperature: 'temperature',
-            precipProb: 'precipProb',
+            time: '',
+            symbol: '',
+            temperature: '',
+            precipProb: '',
         },
     ])
+    const [isDown, setIsDown] = useState(false)
 
     useEffect(() => {
         // const fetchData = async () => {
@@ -36,14 +37,35 @@ export default function HourForecast() {
     }, [])
 
     const hourDataArr = hourData.map((data) => {
-        return <Hour time={data.time} weather={data.symbol} temp={data.temperature} precipProb={data.precipProb} />
+        return <Hour key={hourData.indexOf(data)} time={data.time} weather={data.symbol} temp={data.temperature} precipProb={data.precipProb} />
     })
 
-    console.log(hourDataArr)
+    const [startX, setStartX] = useState(0)
+    const [currentScroll, setCurrentScroll] = useState(0)
+    const panel = document.querySelector('.HourForecast')
+
+    function onMouseDown(event) {
+        setIsDown(true)
+        setStartX(event.pageX - panel.getBoundingClientRect().left)
+        setCurrentScroll(panel.scrollLeft)
+    }
+
+    function onMouseLeave() {
+        setIsDown(false)
+    }
+
+    function onMouseUp() {
+        setIsDown(false)
+    }
+
+    function onMouseMove(event) {
+        if (!isDown) return
+        const x = event.pageX - panel.getBoundingClientRect().left
+        panel.scrollLeft = currentScroll - (x - startX)
+    }
 
     return (
-        <div className='HourForecast'>
-            <Hour time={hourData[0].time} weather={hourData[0].symbol} temp={hourData[0].temperature} precipProb={hourData[0].precipProb} />
+        <div className={`HourForecast ${isDown ? 'Down' : ''}`} onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseLeave={onMouseLeave} onMouseMove={onMouseMove}>
             {hourDataArr}
         </div>
     )

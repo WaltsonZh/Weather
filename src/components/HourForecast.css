@@ -1,15 +1,25 @@
 .HourForecast {
-    background: #0093E5; 
+    background: var(--color-light); 
     height: 160px;
     margin: 40px 3%;
     border-radius: 20px;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 17%;
+    column-gap: 26px;
     overflow: auto hidden;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-inline: 24px;
     overscroll-behavior-inline: contain;
+    user-select: none;
+}
+
+/* @media (max-width: 767px) {
+    .HourForecast:active {
+        background:var(--color-light-active)
+    }
+} */
+
+.Down {
+    background:var(--color-light-active)
 }
 
 .Hour {

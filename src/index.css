@@ -1,22 +1,22 @@
 * {
-    font-family: Roboto, sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    --color-normal: #007dc3;
-    --color-dark: #001931;
-    --color-grey: #5f7988;
-    --color-light: hsla(0, 100%, 100%, 0.15);
-    --color-light-active: hsla(0, 100%, 100%, 0.25)
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --color-normal: #007dc3;
+  --color-dark: #001931;
+  --color-grey: #5f7988;
+  --color-light: hsla(0, 100%, 100%, 0.15);
+  --color-light-active: hsla(0, 100%, 100%, 0.25);
 }
 
 body {
-    background: linear-gradient(315deg, var(--color-dark), var(--color-normal));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background: linear-gradient(315deg, var(--color-dark), var(--color-normal));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }

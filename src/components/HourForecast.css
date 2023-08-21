@@ -1,8 +1,5 @@
 .HourForecast {
-    background: var(--color-light); 
     height: 160px;
-    margin: 40px 3%;
-    border-radius: 20px;
     display: grid;
     grid-auto-flow: column;
     column-gap: 26px;

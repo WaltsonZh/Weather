@@ -1,21 +1,21 @@
 .Navbar {
-    background-color: var(--color-dark);
-    background-attachment: fixed;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
-    height: 60px;
-    display: flex;
-    padding: 16px;
-    position: sticky;
+  background-color: var(--color-dark);
+  background-attachment: fixed;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  height: 60px;
+  display: flex;
+  padding: 16px;
+  position: sticky;
 }
 
 .Navbar > img {
-    width: 25px;
+  width: 25px;
 }
 
 .Navbar > h4 {
-    font-size: 24px;
-    color: white;
-    font-weight: 400;
-    margin: 0 16px;
-    letter-spacing: -1px;
+  font-size: 24px;
+  color: white;
+  font-weight: 400;
+  margin: 0 16px;
+  letter-spacing: -1px;
 }

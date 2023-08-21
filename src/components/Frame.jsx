@@ -5,11 +5,11 @@ import Current from './Current'
 import HourForecast from './HourForecast'
 
 export default function Frame() {
-    return (
-        <main className='Frame'>
-            <Searchbar />
-            <Current />
-            <HourForecast />
-        </main>
-    )
+  return (
+    <main className='Frame'>
+      <Searchbar />
+      <Current />
+      <HourForecast />
+    </main>
+  )
 }

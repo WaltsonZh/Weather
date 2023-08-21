@@ -1,85 +1,93 @@
 .Frame {
-    width: 487px;
-    max-width: 90vw;
-    height: 845px;
-    max-height: 80vh;
-    text-align: center;
-    background: var(--color-normal);
-    margin: 31px auto;
-    border-radius: 20px;
-    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
-    position: relative;
-    overflow: auto;
+  width: 487px;
+  max-width: 90vw;
+  height: 845px;
+  max-height: 80vh;
+  text-align: center;
+  background: var(--color-normal);
+  margin: 31px auto;
+  border-radius: 20px;
+  box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: auto;
 }
 
 .searchBox {
-    background: white;
-    width: 452px;
-    max-width: 95%;
-    height: 50px;
-    border-radius: 25px;
-    border: none;
-    margin: 22px auto;
-    text-indent: 20px;
-    font-size: 20px;
+  background: white;
+  width: 452px;
+  max-width: 95%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  margin: 22px auto;
+  text-indent: 20px;
+  font-size: 20px;
 }
 
 .searchBtn {
-    position: absolute;
-    top: 29px;
-    right: 24px;
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    border: none;
-    background: var(--color-normal);
-    cursor: pointer;
-    transition: 0.3s;
+  position: absolute;
+  top: 29px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  border: none;
+  background: var(--color-normal);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .searchBtn:active {
-    background: var(--color-dark);
+  background: var(--color-dark);
 }
 
 .Current {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .current-location {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 29px auto;
-    gap: 6px;
-    grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 29px auto;
+  gap: 6px;
+  grid-column: 1 / -1;
 }
 
 .location-icon {
-    width: 24px;
+  width: 24px;
 }
 
 .location {
-    font-size: 30px;
-    color: white;
+  font-size: 30px;
+  color: white;
 }
 
 .current-weather {
-    color: white;
-    text-align: left;
-    margin: auto;
+  color: white;
+  text-align: left;
+  margin: auto;
 }
 
 .current-temp {
-    font-size: 72px;
-    line-height: 0.9;
+  font-size: 72px;
+  line-height: 0.9;
 }
 
 .current-env {
-    font-size: 48px;
-    line-height: 1.4;
+  font-size: 32px;
+  line-height: 1.4;
+  max-width: 200px;
+  text-overflow: ellipsis;
 }
 
 .current-img {
-    margin: auto;
+  margin: auto;
+}
+
+.subFrame {
+  background: var(--color-light);
+  border-radius: 20px;
+  margin: 40px 3%;
 }

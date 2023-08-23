@@ -1,4 +1,3 @@
-import React from 'react'
 import './Navbar.css'
 import icon from '/images/sun-cloud.svg'
 

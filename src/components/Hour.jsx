@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Hour({ time, weather, temp, precipProb }) {
   let precip = ''
   if (precipProb > 60) {

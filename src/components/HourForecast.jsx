@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './HourForecast.css'
 import axios from 'axios'
 import Hour from './Hour'
-import hourForecast from '/src/Hourforecast.json'
+import hourForecast from '/src/data/hourForecast.json'
 
 export default function HourForecast() {
   const [hourData, setHourData] = useState([
@@ -25,9 +25,7 @@ export default function HourForecast() {
     //             timezone: 'Asia/Taipei',
     //         },
     //     }
-
     //     const { data } = await axios.request(options)
-    //     console.log(data)
     //     setHourData(data.forecast)
     // }
 

@@ -1,16 +1,12 @@
 import axios from 'axios'
 
 export async function handler(event, context) {
-  const { location, timezone } = event.queryStringParameters
-  // const { location, timezone } = { location: 106696918, timezone: 'Asia/Taipei' }
+  // const { location } = event.queryStringParameters
+  const location = 'Taoyuan City'
 
   const options = {
     method: 'GET',
-    url: `https://foreca-weather.p.rapidapi.com/current/${location}`,
-    params: {
-      windunit: 'KMH',
-      tz: timezone,
-    },
+    url: `https://foreca-weather.p.rapidapi.com/location/search/${location}`,
     headers: {
       'X-RapidAPI-Key': process.env.API_KEY,
       'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com',

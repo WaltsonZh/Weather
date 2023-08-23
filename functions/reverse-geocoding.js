@@ -1,19 +1,20 @@
 import axios from 'axios'
 
 export async function handler(event, context) {
-  const { location, timezone } = event.queryStringParameters
-  // const { location, timezone } = { location: 106696918, timezone: 'Asia/Taipei' }
+  const { lat, lon } = event.queryStringParameters
+  // const { lat, lon } = { lat: '24.9921536', lon: '121.297' }
 
   const options = {
     method: 'GET',
-    url: `https://foreca-weather.p.rapidapi.com/current/${location}`,
+    url: 'https://geocodeapi.p.rapidapi.com/GetNearestCities',
     params: {
-      windunit: 'KMH',
-      tz: timezone,
+      range: '0',
+      latitude: lat,
+      longitude: lon,
     },
     headers: {
       'X-RapidAPI-Key': process.env.API_KEY,
-      'X-RapidAPI-Host': 'foreca-weather.p.rapidapi.com',
+      'X-RapidAPI-Host': 'geocodeapi.p.rapidapi.com',
     },
   }
 
@@ -26,7 +27,7 @@ export async function handler(event, context) {
   } catch (error) {
     const { status, statusText, headers, data } = error.response
     return {
-      statusCode: status,
+      statusCode: 500,
       body: JSON.stringify({ status, statusText, headers, data }),
     }
   }

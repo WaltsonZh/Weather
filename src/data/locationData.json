@@ -1,0 +1,16 @@
+{
+  "locations": [
+    {
+      "id": 106696918,
+      "name": "Taoyuan City",
+      "country": "Taiwan",
+      "timezone": "Asia/Taipei",
+      "language": "en",
+      "adminArea": "Taiwan",
+      "adminArea2": "Taoyuan",
+      "adminArea3": "Taoyuan District",
+      "lon": 121.297,
+      "lat": 24.9937
+    }
+  ]
+}

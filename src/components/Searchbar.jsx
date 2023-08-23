@@ -1,6 +1,5 @@
 import React from 'react'
 import icon from '/images/search-icon.svg'
-import './Frame.css'
 
 export default function Searchbar() {
   return (

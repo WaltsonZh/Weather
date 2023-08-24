@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 export async function handler(event, context) {
-  // const { location } = event.queryStringParameters
-  const location = 'Taoyuan City'
+  const { location } = event.queryStringParameters
+  // const location = 'Taoyuan City'
 
   const options = {
     method: 'GET',

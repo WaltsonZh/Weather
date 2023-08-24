@@ -1,0 +1,29 @@
+.Addition {
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 2%;
+}
+
+.title {
+  width:max-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  font-size: 14px;
+}
+
+.title > p {
+  display: flex;
+  align-items: center;
+}
+
+.titleImg {
+  margin-inline-end: 3px;
+}
+
+.dir {
+  width: 20px;
+}

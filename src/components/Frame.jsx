@@ -106,7 +106,7 @@ export default function Frame() {
     // }
     // fetchCurrentWeather().catch((error) => console.log(error))
 
-    // const fetchData = async () => {
+    // const fetchHourlyWeather = async () => {
     //   const options = {
     //     method: 'GET',
     //     url: '/.netlify/functions/fetch-hourly-forecast',
@@ -120,7 +120,7 @@ export default function Frame() {
     //   setHourData(data.forecast)
     // }
 
-    // fetchData().catch((error) => console.error(error))
+    // fetchHourlyWeather().catch((error) => console.error(error))
 
     // const fetchDailyWeather = async () => {
     //   const options = {

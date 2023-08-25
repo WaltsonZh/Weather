@@ -1,38 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './HourForecast.css'
-import axios from 'axios'
 import Hour from './Hour'
-import hourForecast from '/src/data/hourForecast.json'
 
-export default function HourForecast() {
-  const [hourData, setHourData] = useState([
-    {
-      time: '',
-      symbol: '',
-      temperature: '',
-      precipProb: '',
-    },
-  ])
+export default function HourForecast({ hourData }) {
   const [isDown, setIsDown] = useState(false)
-
-  useEffect(() => {
-    // const fetchData = async () => {
-    //     const options = {
-    //         method: 'GET',
-    //         url: '/.netlify/functions/fetch-hourly-forecast',
-    //         params: {
-    //             location: 106696918,
-    //             timezone: 'Asia/Taipei',
-    //         },
-    //     }
-    //     const { data } = await axios.request(options)
-    //     setHourData(data.forecast)
-    // }
-
-    // fetchData().catch((error) => console.error(error))
-
-    setHourData(hourForecast)
-  }, [])
 
   const hourDataArr = hourData.map((data) => {
     return <Hour key={hourData.indexOf(data)} time={data.time} weather={data.symbol} temp={data.temperature} precipProb={data.precipProb} />

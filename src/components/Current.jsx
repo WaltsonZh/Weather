@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
 import pin from '/images/pin.svg'
-import axios from 'axios'
 
 export default function Current({ city, coords, weather }) {
   return (

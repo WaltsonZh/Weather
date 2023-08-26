@@ -1,3 +1,26 @@
 .DailyForecast {
-  height: 500px;
+  padding: 1% 4%;
+}
+
+.Daily {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  margin-block: 10px;
+}
+
+.Daily > img {
+  width: 36px;
+  height: 36px;
+}
+
+.weekDays {
+  width: 35%;
+  text-align: left;
+}
+
+.precip {
+  gap: 8px;
 }

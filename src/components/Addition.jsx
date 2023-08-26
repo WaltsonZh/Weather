@@ -31,7 +31,7 @@ export default function Addition({ humidity, wind, UVI, sun }) {
           <img className='titleImg' src='/images/sunrs.svg' />
           {sun.phrase}
         </p>
-        <p>{sun.time}</p>
+        <p>{sun.time.slice(0, 5)}</p>
       </div>
     </div>
   )

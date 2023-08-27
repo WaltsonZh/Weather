@@ -6,6 +6,7 @@
   display: flex;
   padding: 16px;
   position: sticky;
+  width: 100%;
 }
 
 .Navbar > img {

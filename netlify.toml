@@ -2,3 +2,6 @@
 command = 'npm run build'
 functions = 'functions'
 public = 'dist'
+
+[functions]
+external_node_modules = ['axios']

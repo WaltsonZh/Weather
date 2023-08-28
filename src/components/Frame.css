@@ -91,3 +91,11 @@
   border-radius: 20px;
   margin: 20px 3%;
 }
+
+.night {
+  background-color: var(--color-dark);
+}
+
+.grey {
+  background: hsl(0, 0%, 55%);
+}

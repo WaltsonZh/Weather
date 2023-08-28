@@ -186,8 +186,16 @@ export default function Frame() {
     return array
   }
 
+  function backgroundStyle() {
+    if (weather.symbol[0] === 'n') {
+      return 'night'
+    } else if (weather.symbol[1] === '3' || weather.symbol[1] === '4' || weather.symbol[1] === '6') {
+      return 'grey'
+    }
+  }
+
   return (
-    <main className='Frame'>
+    <main className={`Frame ${backgroundStyle()}`}>
       <Searchbar search={searchLocation} />
       <Current city={city} coords={coords} weather={weather} />
       <HourForecast hourData={hourlyWeather} />

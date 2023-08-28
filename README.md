@@ -4,7 +4,7 @@
 
 The Weather App is a simple web application that allows users to check the current weather conditions for a location of their choice. This project was implemented using [React](https://react.dev) and uses [Vite](https://vitejs.dev) as the bundler.
 
-([visit site](https://wzh-weather.netlify.app))
+([visit site](https://wzh-weather.netlify.app)) [![Netlify Status](https://api.netlify.com/api/v1/badges/d212dac3-4374-4507-bb82-d963c140e79a/deploy-status)](https://app.netlify.com/sites/wzh-weather/deploys)
 
 ## Features
 

@@ -1,7 +1,8 @@
 [build]
-command = 'npm run build'
-functions = 'functions'
-public = 'dist'
+command = "npm run build"
+functions = "functions"
+public = "dist"
 
 [functions]
-external_node_modules = ['axios']
+node_bundler = "vite"
+external_node_modules = ["axios"]

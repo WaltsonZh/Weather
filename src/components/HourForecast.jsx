@@ -6,7 +6,15 @@ export default function HourForecast({ hourData }) {
   const [isDown, setIsDown] = useState(false)
 
   const hourDataArr = hourData.map((data) => {
-    return <Hour key={hourData.indexOf(data)} time={data.time} weather={data.symbol} temp={data.temperature} precipProb={data.precipProb} />
+    return (
+      <Hour
+        key={hourData.indexOf(data)}
+        time={data.time}
+        weather={data.symbol}
+        temp={data.temperature}
+        precipProb={data.precipProb}
+      />
+    )
   })
 
   const [startX, setStartX] = useState(0)
@@ -34,7 +42,13 @@ export default function HourForecast({ hourData }) {
   }
 
   return (
-    <div className={`HourForecast subFrame ${isDown ? 'Down' : ''}`} onMouseDown={onMouseDown} onMouseUp={onMouseUp} onMouseLeave={onMouseLeave} onMouseMove={onMouseMove}>
+    <div
+      className={`HourForecast subFrame ${isDown ? 'Down' : ''}`}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onMouseLeave={onMouseLeave}
+      onMouseMove={onMouseMove}
+    >
       {hourDataArr}
     </div>
   )

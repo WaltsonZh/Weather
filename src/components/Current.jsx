@@ -10,7 +10,7 @@ export default function Current({ city, coords, weather }) {
             src={pin}
           />
         )}
-        <p className='location'>{city.City}</p>
+        <p className='location'>{city.City.toUpperCase()}</p>
       </div>
       <div className='current-weather'>
         <p className='current-temp'>{weather.temperature}&deg;C</p>

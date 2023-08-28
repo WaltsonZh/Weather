@@ -12,7 +12,13 @@ export default function Searchbar({ search }) {
 
   return (
     <form onSubmit={submit}>
-      <input className='searchBox' type='text' placeholder='Enter Location...' value={input} onChange={(e) => setInput(e.target.value)} />
+      <input
+        className='searchBox'
+        type='text'
+        placeholder='Enter Location...'
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
       <button className='searchBtn'>
         <img src={icon} />
       </button>

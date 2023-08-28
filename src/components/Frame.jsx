@@ -14,151 +14,151 @@ export default function Frame() {
   const [hourlyWeather, setHourlyWeather] = useState(() => initHourlyWeather())
   const [dailyWeather, setDailyWeather] = useState(() => initDailyWeather())
 
-  // useEffect(() => {
-  //   if (!('geolocation' in navigator)) {
-  //     onError({ code: 0, message: 'Geolocation not available in current browser' })
-  //   }
+  useEffect(() => {
+    if (!('geolocation' in navigator)) {
+      onError({ code: 0, message: 'Geolocation not available in current browser' })
+    }
 
-  //   navigator.geolocation.getCurrentPosition(onSuccess, onError)
+    navigator.geolocation.getCurrentPosition(onSuccess, onError)
 
-  //   function onSuccess(position) {
-  //     setCoords({
-  //       lat: position.coords.latitude,
-  //       lon: position.coords.longitude,
-  //       current: true,
-  //     })
-  //   }
+    function onSuccess(position) {
+      setCoords({
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+        current: true,
+      })
+    }
 
-  //   async function onError(error) {
-  //     if (error.message === 'The permission was revoked') {
-  //       try {
-  //         const { data } = await axios.get('https://location.services.mozilla.com/v1/geolocate?key=test')
-  //         setCoords({
-  //           lat: data.location.lat,
-  //           lon: data.location.lng,
-  //           current: true,
-  //         })
-  //       } catch (error) {
-  //         console.log(error)
-  //       }
-  //     } else {
-  //       console.log(error)
-  //       setCoords((prevCoords) => ({
-  //         ...prevCoords,
-  //         current: false,
-  //       }))
-  //     }
-  //   }
-  // }, [])
+    async function onError(error) {
+      if (error.message === 'The permission was revoked') {
+        try {
+          const { data } = await axios.get('https://location.services.mozilla.com/v1/geolocate?key=test')
+          setCoords({
+            lat: data.location.lat,
+            lon: data.location.lng,
+            current: true,
+          })
+        } catch (error) {
+          console.log(error)
+        }
+      } else {
+        console.log(error)
+        setCoords((prevCoords) => ({
+          ...prevCoords,
+          current: false,
+        }))
+      }
+    }
+  }, [])
 
-  // useEffect(() => {
-  //   const reverseGeocoding = async () => {
-  //     const options = {
-  //       method: 'GET',
-  //       url: '/.netlify/functions/reverse-geocoding',
-  //       params: { lat: coords.lat, lon: coords.lon },
-  //     }
-  //     try {
-  //       const { data } = await axios.request(options)
-  //       setCity((prevCity) => ({
-  //         ...prevCity,
-  //         City: data[0].City,
-  //       }))
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
+  useEffect(() => {
+    const reverseGeocoding = async () => {
+      const options = {
+        method: 'GET',
+        url: '/.netlify/functions/reverse-geocoding',
+        params: { lat: coords.lat, lon: coords.lon },
+      }
+      try {
+        const { data } = await axios.request(options)
+        setCity((prevCity) => ({
+          ...prevCity,
+          City: data[0].City,
+        }))
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
-  //   if (coords.current) {
-  //     reverseGeocoding().catch((error) => console.log(error))
-  //   }
-  // }, [coords])
+    if (coords.current) {
+      reverseGeocoding().catch((error) => console.log(error))
+    }
+  }, [coords])
 
-  // useEffect(() => {
-  //   const fetchLocationData = async () => {
-  //     const options = {
-  //       method: 'GET',
-  //       url: '/.netlify/functions/fetch-location-data',
-  //       params: { location: city.City },
-  //     }
+  useEffect(() => {
+    const fetchLocationData = async () => {
+      const options = {
+        method: 'GET',
+        url: '/.netlify/functions/fetch-location-data',
+        params: { location: city.City },
+      }
 
-  //     try {
-  //       const { data } = await axios.request(options)
-  //       setCity((prevCity) => {
-  //         return {
-  //           ...prevCity,
-  //           TimeZoneId: data.locations[0].timezone,
-  //           id: data.locations[0].id,
-  //         }
-  //       })
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
+      try {
+        const { data } = await axios.request(options)
+        setCity((prevCity) => {
+          return {
+            ...prevCity,
+            TimeZoneId: data.locations[0].timezone,
+            id: data.locations[0].id,
+          }
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
-  //   if (city.City !== '--') {
-  //     fetchLocationData().catch((error) => console.log(error))
-  //   }
-  // }, [city.City])
+    if (city.City !== '--') {
+      fetchLocationData().catch((error) => console.log(error))
+    }
+  }, [city.City])
 
-  // useEffect(() => {
-  //   const fetchCurrentWeather = async () => {
-  //     const options = {
-  //       method: 'GET',
-  //       url: '/.netlify/functions/fetch-current-weather',
-  //       params: { location: city.id, timezone: city.TimeZoneId },
-  //     }
-  //     try {
-  //       const { data } = await axios.request(options)
-  //       setWeather(data.current)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
+  useEffect(() => {
+    const fetchCurrentWeather = async () => {
+      const options = {
+        method: 'GET',
+        url: '/.netlify/functions/fetch-current-weather',
+        params: { location: city.id, timezone: city.TimeZoneId },
+      }
+      try {
+        const { data } = await axios.request(options)
+        setWeather(data.current)
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
-  //   if (city.id) {
-  //     fetchCurrentWeather().catch((error) => console.log(error))
-  //   }
+    if (city.id) {
+      fetchCurrentWeather().catch((error) => console.log(error))
+    }
 
-  //   const fetchHourlyWeather = async () => {
-  //     const options = {
-  //       method: 'GET',
-  //       url: '/.netlify/functions/fetch-hourly-forecast',
-  //       params: {
-  //         location: city.id,
-  //         timezone: city.TimeZoneId,
-  //       },
-  //     }
-  //     try {
-  //       const { data } = await axios.request(options)
-  //       setHourlyWeather(data.forecast)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
+    const fetchHourlyWeather = async () => {
+      const options = {
+        method: 'GET',
+        url: '/.netlify/functions/fetch-hourly-forecast',
+        params: {
+          location: city.id,
+          timezone: city.TimeZoneId,
+        },
+      }
+      try {
+        const { data } = await axios.request(options)
+        setHourlyWeather(data.forecast)
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
-  //   if (city.id) {
-  //     fetchHourlyWeather().catch((error) => console.error(error))
-  //   }
+    if (city.id) {
+      fetchHourlyWeather().catch((error) => console.error(error))
+    }
 
-  //   const fetchDailyWeather = async () => {
-  //     const options = {
-  //       method: 'GET',
-  //       url: '/.netlify/functions/fetch-daily-forecast',
-  //       params: { location: city.id },
-  //     }
-  //     try {
-  //       const { data } = await axios.request(options)
-  //       setDailyWeather(data.forecast)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
+    const fetchDailyWeather = async () => {
+      const options = {
+        method: 'GET',
+        url: '/.netlify/functions/fetch-daily-forecast',
+        params: { location: city.id },
+      }
+      try {
+        const { data } = await axios.request(options)
+        setDailyWeather(data.forecast)
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
-  //   if (city.id) {
-  //     fetchDailyWeather().catch((error) => console.log(error))
-  //   }
-  // }, [city.id])
+    if (city.id) {
+      fetchDailyWeather().catch((error) => console.log(error))
+    }
+  }, [city.id])
 
   function searchLocation(search) {
     setCity({ City: search })
@@ -197,9 +197,18 @@ export default function Frame() {
   return (
     <main className={`Frame ${backgroundStyle()}`}>
       <Searchbar search={searchLocation} />
-      <Current city={city} coords={coords} weather={weather} />
+      <Current
+        city={city}
+        coords={coords}
+        weather={weather}
+      />
       <HourForecast hourData={hourlyWeather} />
-      <Addition humidity={weather.relHumidity} wind={{ speed: weather.windSpeed, dir: weather.windDirString }} UVI={weather.uvIndex} sun={weather.symbol[0] === 'n' ? { phrase: 'Sun Rise', time: dailyWeather[0].sunrise } : { phrase: 'Sun Set', time: dailyWeather[0].sunset }} />
+      <Addition
+        humidity={weather.relHumidity}
+        wind={{ speed: weather.windSpeed, dir: weather.windDirString }}
+        UVI={weather.uvIndex}
+        sun={weather.symbol[0] === 'n' ? { phrase: 'Sun Rise', time: dailyWeather[0].sunrise } : { phrase: 'Sun Set', time: dailyWeather[0].sunset }}
+      />
       <DailyForecast dailyData={dailyWeather} />
     </main>
   )

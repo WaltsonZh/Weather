@@ -11,7 +11,11 @@ export default function Hour({ time, weather, temp, precipProb }) {
   return (
     <div className='Hour'>
       <p className='time'>{time.slice(11, 16)}</p>
-      <img className='weather' src={`/images/weather/${weather}.png`} draggable={false} />
+      <img
+        className='weather'
+        src={`/images/weather/${weather}.png`}
+        draggable={false}
+      />
       <p className='temp'>{temp}&deg;</p>
       <div className='precip'>
         <img src={`/images/${precip}.svg`} />

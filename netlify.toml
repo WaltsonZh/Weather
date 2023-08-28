@@ -4,5 +4,6 @@ functions = "functions"
 public = "dist"
 
 [functions]
-node_bundler = "vite"
-external_node_modules = ["axios"]
+  [functions."*"]
+  node_bundler = "vite"
+  external_node_modules = ["axios"]

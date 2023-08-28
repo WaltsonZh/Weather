@@ -1,4 +1,9 @@
 [build]
-command = 'npm run build'
-functions = 'functions'
-public = 'dist'
+command = "npm run build"
+functions = "functions"
+public = "dist"
+
+[functions]
+  [functions."*"]
+  node_bundler = "esbuild"
+  external_node_modules = ["axios"]

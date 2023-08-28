@@ -84,13 +84,18 @@ export default function Frame() {
 
       try {
         const { data } = await axios.request(options)
-        setCity((prevCity) => {
-          return {
-            ...prevCity,
-            TimeZoneId: data.locations[0].timezone,
-            id: data.locations[0].id,
-          }
-        })
+
+        if (data.locations.length !== 0) {
+          setCity((prevCity) => {
+            return {
+              ...prevCity,
+              TimeZoneId: data.locations[0].timezone,
+              id: data.locations[0].id,
+            }
+          })
+        } else {
+          setCity((prevCity) => ({ City: prevCity.City, TimeZoneId: '--', id: '' }))
+        }
       } catch (error) {
         console.log(error)
       }
@@ -118,6 +123,8 @@ export default function Frame() {
 
     if (city.id) {
       fetchCurrentWeather().catch((error) => console.log(error))
+    } else {
+      setWeather({ relHumidity: '--', windSpeed: '--', windDirString: '--', uvIndex: '--', symbol: 'd600', symbolPhrase: '--' })
     }
 
     const fetchHourlyWeather = async () => {
@@ -139,6 +146,8 @@ export default function Frame() {
 
     if (city.id) {
       fetchHourlyWeather().catch((error) => console.error(error))
+    } else {
+      setHourlyWeather(initHourlyWeather())
     }
 
     const fetchDailyWeather = async () => {
@@ -157,6 +166,8 @@ export default function Frame() {
 
     if (city.id) {
       fetchDailyWeather().catch((error) => console.log(error))
+    } else {
+      setDailyWeather(initDailyWeather())
     }
   }, [city.id])
 

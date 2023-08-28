@@ -6,7 +6,6 @@ export default function Searchbar({ search }) {
 
   function submit(event) {
     event.preventDefault()
-    console.log('location passed: ' + input)
     search(input)
   }
 

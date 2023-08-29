@@ -7,7 +7,7 @@ export default function Footer() {
       <p>&copy; 2023 Waltson Zh</p>
       <div className='links'>
         <a
-          href='https://github.com/adamaconguli/Weather'
+          href='https://github.com/WaltsonZh/Weather'
           target='_blank'
         >
           <img

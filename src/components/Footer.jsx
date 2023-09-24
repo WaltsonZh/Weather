@@ -16,7 +16,7 @@ export default function Footer() {
           />
         </a>
         <a
-          href='https://www.linkedin.com/in/%E6%B8%9F%E7%80%9A-%E5%BC%B5-b0166028a/'
+          href='www.linkedin.com/in/waltsonzh'
           target='_blank'
         >
           <img
